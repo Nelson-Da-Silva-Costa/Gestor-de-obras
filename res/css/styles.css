@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  height: 94vh;
+  background-image: url('../icons/fundo.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.i-fun {
+  background-color: rgba(0,0,0,0.6);
+  height: 94vh;
+  width: 100%;
+}
+.container-fluid {
+  float: left;
+  margin-top: -150%;
+}
+.form-group {
+  padding: 10px;
+}
+.card {
+  height: 360px;
+  width: 320px;
+  opacity: 0.85;
+}
+.c-he {
+  background-color: #90A4AE;
+  color: #fff;
+}
+.button {
+  color: #fff;
+  border-radius: 5rem;
+  background-color: #607D8B;
+}
+.button:hover {
+  opacity: 0.8;
+  color: #fff;
+  background-color: #607D8B;
+}
+.b-sh {
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
