@@ -1,7 +1,7 @@
 body {
   margin: 0;
   height: 94vh;
-  background-image: url('../icons/fundo.jpeg');
+  background-image: url('../icons/background.png');
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: cover;
