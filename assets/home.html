@@ -1,0 +1,148 @@
+<?php
+  session_start();
+  $action = GET['action'];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="icon" type="image/png" href="../res/icons/logo.png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link href="../res/css/Home.css" rel="stylesheet"/>
+</head>
+<body id="body-pd">
+  <section>
+    <header class="header" id="header">
+      <div class="header-toggle">
+        <i class="b-w f-t bx bx-menu" id="header-toggle"></i>
+      </div>
+      <li>
+        <a href="?action=agenda" type="button" class="icon-button">
+          <span class="material-icons"><i class="f-t bx bx-bell"></i></span>
+          <span class="icon-button__badge">1</span>
+        </a>
+      </li>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+      <nav class="nav">
+        <div> 
+          <div class="nav_list">
+            <li <?php if($action == NULL or $action == "obras"){?>  <?php } ?>
+              <a class="nav_link active" href="?action=obras">
+                <i class='bx bx-grid-alt nav_icon'>
+                  
+                </i>
+                <span class="nav_name">Home
+                </span>
+              </a>
+            </li> 
+            <li<?php if( $action == "obras"){?>  <?php } ?>
+              <a class="nav_link" href="?action=obras" class="nav_link">
+                <i class='bx bx-hard-hat nav_icon'>
+                
+                </i>
+                <span class="nav_name">Obras
+                </span> 
+              </a>
+            </li>
+            <li<?php if( $action == "concretos"){?>  <?php } ?>
+              <a class="nav_link" href="?action=concretos">
+                <img src="../../icons/concreto.png" style="margin-left: -5px;" height="28">
+                <span class="nav_name">Concretos
+                </span> 
+              </a>
+            </li>
+            <li<?php if( $action == "agenda"){?>  <?php } ?>
+              <a class="nav_link" href="?action=agenda"> 
+                <i class='bx bx-book-bookmark nav_icon'>
+                  
+                </i> 
+                <span class="nav_name">Agenda
+                </span> 
+              </a>
+            </li>
+            <li<?php if( $action == "vagas"){?>  <?php } ?>
+              <a class="nav_link" href="?action=vagas" class="nav_link"> 
+                <i class='bx bx-car nav_icon'>
+                  
+                </i> 
+                <span class="nav_name">Vagas
+                </span> 
+              </a>
+            </li>
+            <li<?php if( $action == "configuracao"){?>  <?php } ?>
+              <a class="nav_link" href="?action=configuracao"> 
+                <i class='bx bx-cog nav_icon'>
+                </i> 
+                <span class="nav_name">Configuracão
+                </span> 
+              </a>
+            </li>
+            <li>
+              <a class="nav_link" href="../index.html"> 
+                <i class='bx bx-exit nav_icon'>
+                  
+                </i> 
+                <span class="nav_name">Sair 
+                </span> 
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+      <div style="margin: -2%;" class="height-100 bg-light text-align-center">
+        <?php
+    
+          $serach = mysqli_real_escape_string($conn ,$_GET['q']);
+
+          if($action == NULL or $action == "obras" && $serach == NULL ){
+                        include_once("obras.php");
+                      }
+                      elseif($action == "obras"){
+                        include_once("obras.php");
+                      }
+                      elseif($action == "vagas"){
+                        include_once("vagas.php");
+                       }
+                       elseif($action == "terceirizado"){
+                        include_once("terceirizado.php");
+                       }
+                    
+                      elseif($action == "historico"){
+                        include_once("historico_vaga.php");
+                       }
+                      elseif($action == "concretos"){
+                        include_once("totalConcreto.php");
+                      }
+                      elseif($action == "agenda"){
+                        include_once("agenda.php");
+                      }
+                      elseif($action == "configuracao"){
+                        include_once("usuario.php");
+                      }
+                       elseif($action == "saida"){
+                        include_once("saida_vaga.php");
+                      }                   elseif($action == "entrada"){
+                        include_once("entrada_vaga.php");
+                      }
+                       elseif($action == "editagenda"){
+                        include_once("editaragenda.php");
+                      }
+						           elseif($action == "edita_concreto"){
+                        include_once("atualiza_concreto.php");
+                      }
+                         
+          ?>  
+          
+  
+    </div>
+  </section>
+<script src="../res/js/main.js">
+</script>
+</body>
+</html>
