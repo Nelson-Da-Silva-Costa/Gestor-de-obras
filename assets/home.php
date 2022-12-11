@@ -1,15 +1,19 @@
 <?php
-  session_start();
-  $action = GET['action'];
+  require ('config/config.php');
+  require('config/checks.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+<?php
+  session_start();
+  $action = $_GET['action'];
+?>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Gestor de obras</title>
+  <link rel="icon" type="image/png" href="../res/icons/logo.png"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link href="../res/css/home.css" rel="stylesheet"/>
 </head>
@@ -34,42 +38,42 @@
     <div class="menu-bar">
       <div class="menu">
           <ul class="menu-links">
-            <li class="nav-link" <?php if($action == NULL or $action == "obras"){?> <?php } ?>>
-              <a href="#">
+            <li class="nav-link" <?php if($action == NULL or $action == "dashboard"){?> <?php } ?>>
+              <a href="?action=dashboard">
                 <i class='bx bx-home-alt icon' ></i>
                   <span class="text nav-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-link" <?php if( $action == "obras"){?>  <?php } ?>>
-              <a href="#">
+              <a href="?action=obras">
                 <i class='bx bx-hard-hat icon' ></i>
                 <span class="text nav-text">Obras
                 </span>
               </a>
             </li>
             <li class="nav-link" <?php if( $action == "agenda"){?>  <?php } ?>>
-              <a href="#">
+              <a href="?action=agenda">
                 <i class='bx bx-book-bookmark icon'></i>
                 <span class="text nav-text">Agenda
                 </span>
               </a>
             </li>
             <li class="nav-link" <?php if( $action == "concreto"){?>  <?php } ?>>
-              <a href="#">
+              <a href="?action=concreto">
                 <i class='bx bx-pie-chart-alt icon' ></i>
                 <span class="text nav-text">Concretos
                 </span>
               </a>
             </li>
             <li class="nav-link" <?php if( $action == "vagas"){?>  <?php } ?>>
-              <a href="#">
+              <a href="?action=vagas">
                 <i class='bx bx-car icon' ></i>
                 <span class="text nav-text">Vagas Carros
                 </span>
               </a>
             </li>
             <li class="nav-link" <?php if( $action == "configuracao"){?>  <?php } ?>>
-              <a href="home.html?action=configuracao">
+              <a href="?action=config">
                 <i class='bx bx-cog icon' ></i>
                 <span class="text nav-text">Configuração
                 </span>
@@ -79,7 +83,7 @@
       </div>
       <div class="bottom-content">
         <li class="nav-link">
-          <a href="#">
+          <a href="config/logout.php">
             <i class='bx bx-log-out icon' ></i>
             <span class="text nav-text">Sair</span>
           </a>
@@ -89,7 +93,7 @@
             <i class='bx bx-moon icon moon'></i>
             <i class='bx bx-sun icon sun'></i>
           </div>
-            <span class="mode-text text">Dark mode</span>
+          <span class="mode-text text">Dark mode</span>
           <div class="toggle-switch">
             <span class="switch"></span>
           </div>
@@ -103,8 +107,8 @@
     
           $serach = mysqli_real_escape_string($conn ,$_GET['q']);
 
-          if($action == NULL or $action == "obras" && $serach == NULL ){
-                        include_once("obras.php");
+          if($action == NULL or $action == "dashboard" && $serach == NULL ){
+                        include_once("dashboard.php");
                       }
                       elseif($action == "obras"){
                         include_once("obras.php");
@@ -112,37 +116,20 @@
                       elseif($action == "vagas"){
                         include_once("vagas.php");
                        }
-                       elseif($action == "terceirizado"){
-                        include_once("terceirizado.php");
-                       }
-                    
-                      elseif($action == "historico"){
-                        include_once("historico_vaga.php");
-                       }
-                      elseif($action == "concretos"){
-                        include_once("totalConcreto.php");
+                      elseif($action == "concreto"){
+                        include_once("concreto.php");
                       }
                       elseif($action == "agenda"){
                         include_once("agenda.php");
                       }
-                      elseif($action == "configuracao"){
-                        include_once("usuario.php");
-                      }
-                       elseif($action == "saida"){
-                        include_once("saida_vaga.php");
-                      }                   elseif($action == "entrada"){
-                        include_once("entrada_vaga.php");
-                      }
-                       elseif($action == "editagenda"){
-                        include_once("editaragenda.php");
-                      }
-						           elseif($action == "edita_concreto"){
-                        include_once("atualiza_concreto.php");
+                      elseif($action == "config"){
+                        include_once("config.php");
                       }
                          
           ?>  
     </div>
   </section>
+<?php mysqli_close($conn); ?>
 <script>
 const body = document.querySelector('body'),
   sidebar = body.querySelector('nav'),
@@ -166,7 +153,6 @@ modeSwitch.addEventListener("click" , () =>{
         
     }
 });
-</script>
 </script>
 </body>
 </html>

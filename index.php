@@ -15,17 +15,17 @@
   <div class="limiter">
     <div class="container-login100" style="background-image:url('res/icons/background.png');">
       <div class="wrap-login100">
-        <form class="login100-form validate-form">
+        <form method="POST" action="assets/config/login.php" class="login100-form validate-form">
           <span class="login100-form-logo">
             <img src="res/icons/logo.png" height="78"/>
           </span>
-          <span class="login100-form-title p-b-34 p-t-27">Log in</span>
+          <span class="login100-form-title p-b-34 p-t-27">Login</span>
           <div class="wrap-input100">
             <input class="input100" type="text" name="login" data-validate="Enter username" placeholder="Username" required/>
             <span class="focus-input100" data-placeholder="&#xf207"></span>
           </div>
           <div class="wrap-input100">
-            <input class="input100" type="password" data-valdate="Enter password" name="pass" placeholder="password" required/>
+            <input class="input100" type="password" data-valdate="Enter password" name="password" placeholder="password" required/>
             <span class="focus-input100" data-placeholder="&#xf191"></span>
             </div>
             <div class="contact100-form-checkbox">
