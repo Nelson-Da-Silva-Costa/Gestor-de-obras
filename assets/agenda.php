@@ -7,6 +7,6 @@
     <title>Agenda</title>
 </head>
 <body>
-    <h1>Teste de página Agenda</h1>
+    <h6>Teste de página Agenda</h6>
 </body>
 </html>
