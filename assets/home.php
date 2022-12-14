@@ -40,41 +40,41 @@
     <div class="menu-bar">
       <div class="menu">
           <ul class="menu-links">
-            <li class="nav-link" <?php if($action == NULL or $action == "dashboard"){?> <?php } ?>
+            <li class="nav-link" <?php if($action == NULL or $action == "dashboard"){?> <?php } ?>>
               <a href="?action=dashboard">
                 <i class='bx bx-home-alt icon' ></i>
                   <span class="text nav-text">Dashboard</span>
               </a>
             </li>
-            <li class="nav-link" <?php if( $action == "obras"){?>  <?php } ?>
+            <li class="nav-link" <?php if( $action == "obras"){?>  <?php } ?>>
               <a href="?action=obras">
                 <i class='bx bx-hard-hat icon' ></i>
                 <span class="text nav-text">Obras
                 </span>
               </a>
             </li>
-            <li class="nav-link" <?php if( $action == "agenda"){?>  <?php } ?>
+            <li class="nav-link" <?php if( $action == "agenda"){?>  <?php } ?>>
               <a href="?action=agenda">
                 <i class='bx bx-book-bookmark icon'></i>
                 <span class="text nav-text">Agenda
                 </span>
               </a>
             </li>
-            <li class="nav-link" <?php if( $action == "concreto"){?>  <?php } ?>
+            <li class="nav-link" <?php if( $action == "concreto"){?>  <?php } ?>>
               <a href="?action=concreto">
                 <i class='bx bx-pie-chart-alt icon' ></i>
                 <span class="text nav-text">Concretos
                 </span>
               </a>
             </li>
-            <li class="nav-link" <?php if( $action == "vagas"){?>  <?php } ?>
+            <li class="nav-link" <?php if( $action == "vagas"){?>  <?php } ?>>
               <a href="?action=vagas">
                 <i class='bx bx-car icon' ></i>
                 <span class="text nav-text">Vagas Carros
                 </span>
               </a>
             </li>
-            <li class="nav-link" <?php if( $action == "configuracao"){?>  <?php } ?>
+            <li class="nav-link" <?php if( $action == "configuracao"){?>  <?php } ?>>
               <a href="?action=config">
                 <i class='bx bx-cog icon' ></i>
                 <span class="text nav-text">Configuração
@@ -103,13 +103,8 @@
       </div>
     </div>
   </nav>
-<<<<<<< HEAD
-  <section class="home">
-    <div class="text">
-=======
    <section class="home">
     <div class="height-100 text-align-center">
->>>>>>> 5b883de82877649e45918eaccbb9a738282737b3
         <?php
     
           $serach = mysqli_real_escape_string($conn ,$_GET['q']);
