@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Teste de página Obras</h1>
+    <h6>Teste de página Obras</h6>
 </body>
 </html>

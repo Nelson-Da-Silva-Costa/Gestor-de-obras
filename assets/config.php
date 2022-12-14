@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Teste de página de Configuração dos usuários</h1>
+    <h6>Teste de página de Configuração dos usuários</h6>
 </body>
 </html>

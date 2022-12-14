@@ -16,6 +16,7 @@
   <link rel="icon" type="image/png" href="../res/icons/logo.png"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
   <link href="../res/css/home.css" rel="stylesheet"/>
 </head>
 <body>
@@ -102,8 +103,13 @@
       </div>
     </div>
   </nav>
+<<<<<<< HEAD
   <section class="home">
     <div class="text">
+=======
+   <section class="home">
+    <div class="height-100 text-align-center">
+>>>>>>> 5b883de82877649e45918eaccbb9a738282737b3
         <?php
     
           $serach = mysqli_real_escape_string($conn ,$_GET['q']);
@@ -156,5 +162,6 @@ modeSwitch.addEventListener("click" , () =>{
     }
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
