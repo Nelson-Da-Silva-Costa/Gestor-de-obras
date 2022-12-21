@@ -10,6 +10,7 @@
     --bg-header-color: rgb(26, 113, 163);
     --text-color: #707070;
     --hover-color: rgb(26, 113, 163);
+    --box-shadow: 0px 0px 8px -1px #777;
     --body-font: 'Poppins', sans-serif;
     --normal-font-size: 16px;
     --z-fixed: 100;
@@ -40,6 +41,42 @@ body{
     z-index: var(--z-fixed);
     transition: .5s;
     }
+.icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    width: 60px;
+    height: 60px;
+    color: var(--label-color);
+    background-color:transparent;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    }
+    
+    .icon-button:hover {
+    cursor: pointer;
+    }
+    
+    .icon-button:active {
+    background: transparent;
+    }
+    
+    .icon-button__badge {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 12px;
+    height: 16px;
+    background: red;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    }
 .header_toggle{
     color: var(--text-color);
     font-size: 2rem;
@@ -66,9 +103,7 @@ body{
     padding: .5rem 1rem 0 0;
     transition: .5s;
     z-index: var(--z-fixed);
-    -webkit-box-shadow: 0px 0px 1px 0px #8f9799a7;
-    -moz-box-shadow: 0px 0px 0px 1px #8f9799a7;
-    box-shadow: 0px 0px 4px 0px #090909c9;
+    box-shadow: var(--box-shadow);
 }
 a {
     left: 5px;
@@ -144,19 +179,16 @@ a {
 div.card {
     margin: 2px;
     color: var(--primary-color);
-    -webkit-box-shadow: 0px 0px 1px 0px #8f9799a7;
-    -moz-box-shadow: 0px 0px 0px 1px #8f9799a7;
-    box-shadow: 0px 0px 4px 0px #090909c9;
+    box-shadow: var(--box-shadow);
 }
 .card-header {
     background-color: var(--hover-color);
 }
 div.card-body {
     background-color: var(--primary-color);
-    border-radius: 0px 0px 6px 6px;
 }
 div #body {
-    border-radius: 6px;
+    border-radius: 7px;
 }
 
 /* ========= Mode Dark ========*/
@@ -164,29 +196,31 @@ body.dark{
     --body-color: #2e2e2e;
     --bg-color: #222222;
     --text-color: #E5E5E5;
+    --box-shadow: 1px 1px 4px 2px #222;
 }
-.dark .l-navbar, .dark div#ui, .dark div#body {
+.dark .l-navbar, .dark div#body {
     background: var(--bg-color);
     color: var(--primary-color);
-    -webkit-box-shadow: 0px 0px 1px 0px #8f9799a7;
-    -moz-box-shadow: 0px 0px 0px 1px #8f9799a7;
-    box-shadow: 0px 0px 4px 0px #090909c9;
+    box-shadow: var(--box-shadow);
 }
-.dark body, .dark .card-body, .dark .card, .dark #header, .dark section, .dark {
+.dark body, .dark .card-body, .dark .card, .dark div#ui {
     background: var(--body-color);
 }
 .dark .card-header {
     background: var(--bg-header-color);
 }
-.dark label {
-    background: #fff;
+.dark .icon-button {
+    color: var(--text-color);
 }
-.dark div.ball {
+.dark .label {
     background: #18191a;
 }
 
 /* ========= Mode Dark ========*/
-
+div.mode {
+    float: left;
+    margin-top: 15px;
+}
 .row .checkbox {
     margin-left: 40px;
 }
@@ -206,13 +240,9 @@ body.dark{
     height: 26px;
     width: 50px;
     transform: scale(0.7);
-    -webkit-transform: scale(0.7);
-    -moz-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    -o-transform: scale(0.7);
 }
 .label .ball {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     border-radius: 50%;
     position: absolute;
     top: 2px;
@@ -234,13 +264,13 @@ body.dark{
 
 /* ====== Dashboard ======== */
 .radius-10 {
-    width: 145px;
+    min-width: 245px;
 }
 h5 {
     margin-top: 5px;
 }
-div.col-ms-6.col-md-5 .table-responsive {
-    height: 540px;
+div.table-responsive {
+    height: 620px;
 }
 div.col-ms-6.col-md-5 div.card div.card-header{
     height: 70px;
@@ -251,11 +281,11 @@ div#ui {
     font-size: 12px;
     padding: 5px;
     border-radius: 0;
-    -webkit-box-shadow: 0px 0px 1px 0px #8f9799a7;
-    -moz-box-shadow: 0px 0px 0px 1px #8f9799a7;
-    box-shadow: 0px 0px 4px 0px #090909c9;
+    box-shadow: var(--box-shadow);
 }
-
+div#card {
+    border-radius: 0;
+}
 
 /* ====== Dashboard ======== */
 

@@ -3,7 +3,7 @@
 
  if (!$_SESSION['login']) {
 
-    header('Locatio: ../../index.php');
+    header('Locatio: ../../index.html');
     exit();
  }
  
