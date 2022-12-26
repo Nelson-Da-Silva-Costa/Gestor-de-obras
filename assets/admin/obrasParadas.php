@@ -5,10 +5,11 @@ $ver = $conn->query($conexao) or die($mysqli->error);
 <div class="col-ms-6 col-md-6">
     <div id="card" class="card card-home-first">
       <div id="card" class="card-header">
-      <div class="input-group input-group-sm">
-        <input type="text" class="form-control" placeholder="Consultar"  aria-describedby="button-addon2">
-        <button class="btn btn-success" type="button" id="button-addon2">Nova</button>
-      </div>
+        <div class="ui mini action input inverted left icon input">
+            <input type="text" placeholder="Consultar">
+            <i class="search icon"></i>
+            <button class="mini ui positive button" onclick="window.location.href = '#adduser'">Novo</buttom>
+        </div>
         <h5 class="card-title text-center">Obras Paradas</h5>
       </div>
       <div id="table" class="card-body table-responsive d-flex justify-content-center">

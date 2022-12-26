@@ -15,7 +15,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestor de obras</title>
   <link rel="icon" type="image/png" href="../../res/icons/logo.png"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../../res/Semantic/semantic.min.css"/>
@@ -90,7 +89,8 @@
       </div>
     </nav>
   </div> 
-  <div class="height-100">
+  <div class="row lg-0">
+  <div class="height-100 text-center">
       <?php
         $serach = mysqli_real_escape_string($conn ,$_GET['action']);
         if($action == NULL or $action == "dashboard" && $serach == NULL ){
@@ -121,9 +121,16 @@
             include_once("obrasParadas.php");
           }
       ?>
+
+
     </div>
 <?php mysqli_close($conn); ?>
 
+
+
+
+
+<script src="../../res/js/modal.js"></script>
 <script src="../../res/js/config.js"></script>
 <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>

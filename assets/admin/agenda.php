@@ -21,9 +21,9 @@ $ver = $conn->query($conexao) or die($mysqli->error);
                     <tbody id="myTable">
                     <td style="border: 0;">
                         <div id="ui" class="ui">
-                            <span><b>Lote: </b><?php echo $dado['lote'];?></span><br>
-                            <span><b>Liberada: </b><?php echo date("d/m/Y", strtotime($dado['data']));?></span><br>
-                            <span><b>Situação: </b><?php echo $dado['legenda'];?></span>
+                            <span class="d-flex text-left"><b>Lote: </b><?php echo $dado['lote'];?></span>
+                            <span class="d-flex text-left"><b>Liberada: </b><?php echo date("d/m/Y", strtotime($dado['data']));?></span>
+                            <span class="d-flex text-left"><b>Situação: </b><?php echo $dado['legenda'];?></span>
                             <div class="d-flex justify-content-end">
                             <div class="ui buttons">
                                 <button style="font-size: 10px;" class="ui teal button">Editar</button>
@@ -40,12 +40,13 @@ $ver = $conn->query($conexao) or die($mysqli->error);
             </div>
         </div>
     </div>
-    <div class="col-ms-6 col-md-5">
+    <div class="col-ms-6 col-md-6">
         <div id="card" class="card card-home-first">
         <div id="card" class="card-header">
-        <div class="input-group input-group-sm">
-            <input type="text" class="form-control" placeholder="Consultar"  aria-describedby="button-addon2">
-            <button class="btn btn-success" type="button" id="button-addon2">Nova</button>
+        <div class="ui mini action input inverted left icon input">
+            <input type="text" placeholder="Consultar">
+            <i class="search icon"></i>
+            <button class="mini ui positive button" onclick="window.location.href = '#addautoriza'">Novo</buttom>
         </div>
             <h5 class="card-title text-center">Autorizações</h5>
         </div>
@@ -57,9 +58,9 @@ $ver = $conn->query($conexao) or die($mysqli->error);
                     <tbody id="myTable">
                     <td style="border: 0;">
                         <div id="ui" class="ui">
-                            <span><b>Lote: </b><?php echo $dado['lote'];?></span><br>
-                            <span><b>Liberada: </b><?php echo date("d/m/Y", strtotime($dado['data']));?></span><br>
-                            <span><b>Situação: </b><?php echo $dado['legenda'];?></span>
+                            <span class="d-flex text-left"><b>Lote: </b><?php echo $dado['lote'];?></span>
+                            <span class="d-flex text-left"><b>Liberada: </b><?php echo date("d/m/Y", strtotime($dado['data']));?></span>
+                            <span class="d-flex text-left"><b>Situação: </b><?php echo $dado['legenda'];?></span>
                             <div class="d-flex justify-content-end">
                             <div class="ui buttons">
                                 <button style="font-size: 10px;" class="ui teal button">Editar</button>
